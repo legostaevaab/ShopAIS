@@ -1,0 +1,126 @@
+﻿<Window x:Class="Shop.ClothesIns"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop"
+        mc:Ignorable="d"
+        Title="ClothesIns" Height="450" Width="800" Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="recources\5606747.jpg" Stretch="UniformToFill" Grid.ColumnSpan="5"/>
+        <StackPanel Background="Teal">
+            <Button x:Name="firstBT" Height="90" Margin="0" Click="firstBT_Click">
+                <Button.Content>
+                    <TextBlock x:Name="firstTB" Text=""
+                               TextWrapping="Wrap"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="secondBT" Height="90" Margin="0" Click="secondBT_Click">
+                <Button.Content>
+                    <TextBlock Text=""
+                               TextWrapping="Wrap"
+                               x:Name="secondTB"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="thirdBT" Height="90" Margin="0" Click="thirdBT_Click">
+                <Button.Content>
+                    <TextBlock 
+                        x:Name="thirdTB" 
+                        Text=""
+                        TextWrapping="Wrap"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="fourthBT" Height="90" Margin="0" Click="fourthBT_Click">
+                <Button.Content>
+                    <TextBlock Text=""
+                               TextWrapping="Wrap"
+                               x:Name="fourthTB" />
+                </Button.Content>
+            </Button>
+            <Button x:Name="fifthsBT" Height="90" Margin="0" Click="fifthsBT_Click">
+                <Button.Content>
+                    <TextBlock Text=""
+                               TextWrapping="Wrap"
+                               Name="fifthsTB"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Button Grid.Column="3" Background="Transparent" Click="Close" Width="26" HorizontalAlignment="Right" >
+                <Image Source="recources\closeBt.png"/>
+            </Button>
+            <ScrollViewer Height="250">
+                <DataGrid x:Name="clothes"
+                      IsReadOnly="True"
+                  AutoGenerateColumns="False" PreviewMouseDoubleClick="clothes_PreviewMouseDoubleClick">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Описание" Binding="{Binding Path=description}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Тип" Binding="{Binding Path=type}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Производитель" Binding="{Binding Path=manufacturer}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Path=price}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Размер" Binding="{Binding Path=size}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Осталось" Binding="{Binding Path=balance}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        
+                        <DataGridTextColumn Header="Цвет" Binding="{Binding Path=color}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                    
+                </DataGrid>
+            </ScrollViewer>
+            
+            <TextBox x:Name="searchRequest"/>
+            <Button Content="Поиск" Click="Search" Margin="5"/>
+            <Button Content="Назад" Click="ToMain" Margin="5"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="Shop.ChangeCards"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop"
+        mc:Ignorable="d"
+        Title="ChangeCards" Height="300" Width="450"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid Background="SeaShell">
+
+
+        <StackPanel Margin="10">
+
+            <TextBox Text="Имя" Name="name"/>
+            <TextBox Text="Телефон" Name="phone"/>
+            <TextBox Text="Размер скидки" Name="discount"/>
+
+            <Button Content="Сохранить" Click="Change"/>
+            <Button Content="Назад" Click="Back"/>
+        </StackPanel>
+    </Grid>
+</Window>
